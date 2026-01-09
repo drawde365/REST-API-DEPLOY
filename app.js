@@ -23,7 +23,7 @@ app.use(
 )
 app.get('/', (req, res) => {
   // res.status(201).send('<h1>Hola añañin</h1>')
-  res.send('<h1>Hola bro</h1>')
+  res.send('<h1>Chau bro</h1>')
 })
 
 app.get('/movies', (req, res) => {
