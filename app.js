@@ -8,21 +8,19 @@ app.disable('x-powered-by')
 
 const port = process.env.PORT ?? 1234
 
-const ALLOWED_ORIGINS = [
-  'http://localhost:8080'
-]
+const ALLOWED_ORIGINS = ['http://localhost:8080']
 
 app.use(express.json())
-app.use(cors(
-  {
+app.use(
+  cors({
     origin: (origin, callback) => {
       if (!origin || ALLOWED_ORIGINS.includes(origin)) {
         return callback(null, true)
       }
       return callback(new Error('not allowed by CORS'))
     }
-  }
-))
+  })
+)
 app.get('/', (req, res) => {
   // res.status(201).send('<h1>Hola añañin</h1>')
   res.send('<h1>Hola bro</h1>')
@@ -36,9 +34,13 @@ app.get('/movies', (req, res) => {
   // }
   const { genre, rate } = req.query
 
-  const filteredMovies = movies.filter(movie =>
-    (genre === undefined || movie.genre.some(genero => genero.toLowerCase() === genre.toLowerCase())) &&
-    (rate === undefined || Number(movie.rate) >= Number(rate))
+  const filteredMovies = movies.filter(
+    (movie) =>
+      (genre === undefined ||
+        movie.genre.some(
+          (genero) => genero.toLowerCase() === genre.toLowerCase()
+        )) &&
+      (rate === undefined || Number(movie.rate) >= Number(rate))
   )
   res.send(filteredMovies)
 })
@@ -95,7 +97,7 @@ app.delete('/movies/:id', (req, res) => {
   //   res.header('Access-Control-Allow-Origin', origin)
   // }
   const { id } = req.params
-  const index = movies.findIndex(movie => movie.id === id)
+  const index = movies.findIndex((movie) => movie.id === id)
   if (index === -1) {
     return res.status(404).send('<h1>Película no encontrada</h1>')
   }

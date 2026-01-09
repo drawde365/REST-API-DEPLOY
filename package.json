@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:1": "node --watch ./app.js"
+    "dev:1": "node --watch ./app.js",
+    "start": "node ./app.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,13 @@
   "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "5.2.1"
+    "express": "5.2.1",
+    "zod": "4.3.5"
+  },
+  "devDependencies": {
+    "standard": "17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
   }
 }
