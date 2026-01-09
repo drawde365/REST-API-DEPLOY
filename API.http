@@ -1,0 +1,35 @@
+### Al home
+GET http://localhost:1234
+
+### Listar películas
+GET http://localhost:1234/movies
+
+### Obtener película por ID
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### Filtrar películas por género y calificación
+GET http://localhost:1234/movies?genre=Drama&rate=9
+
+### Crear una nueva película
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+"hola": "mundo",
+  "title": "Chauuuu",
+  "year": 2010,
+  "duration": 148,
+  "poster": "https://example.com/inception.jpg",
+  "director": "Christopher Nolan",
+  "genre": ["Sci-Fi","Drama","Action"],
+  "rate": 8.8
+}
+
+### Actualizar una película existente
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "title": "hola",
+  "rate": 9.0
+}
