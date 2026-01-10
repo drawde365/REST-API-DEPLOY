@@ -33,3 +33,6 @@ Content-Type: application/json
   "title": "hola",
   "rate": 9.0
 }
+
+### Eliminar una película
+DELETE http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
