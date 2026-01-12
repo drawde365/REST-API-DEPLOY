@@ -5,7 +5,7 @@ GET http://localhost:1234
 GET http://localhost:1234/movies
 
 ### Obtener película por ID
-GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+GET http://localhost:1234/movies/6ea9fed1-ef3a-11f0-86e8-04ecd823f0e1
 
 ### Filtrar películas por género y calificación
 GET http://localhost:1234/movies?genre=Drama&rate=9

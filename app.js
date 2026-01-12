@@ -1,5 +1,5 @@
 import express, { json } from 'express'
-import { moviesRouter } from './routes/movies.js'
+import { moviesRouter } from './routes/moviesRoutes.js'
 import { middlewareCors } from './middlewares/cors.js'
 
 const port = process.env.PORT ?? 1234

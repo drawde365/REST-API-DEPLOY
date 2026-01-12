@@ -1,4 +1,4 @@
-import { leerArchivoJson } from '../util/leerArchivoJson.js'
+import { leerArchivoJson } from '../../util/leerArchivoJson.js'
 import { randomUUID } from 'crypto'
 const movies = leerArchivoJson('../movies.json')
 
